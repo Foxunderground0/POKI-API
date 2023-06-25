@@ -1,6 +1,7 @@
 scraped/
 to_sort/
 sorted/
+display/
 *.mp4
 *.mkv
 node_modules

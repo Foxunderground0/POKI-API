@@ -6,8 +6,9 @@ app.set("view engine", "ejs");
 //app.use(express.static(__dirname + "/public"));
 
 var files_list = []
+var filesystem_root =  __dirname + "/../Immages/"
 
-fs.readdir("Immages/scraped/", (err, files) => {
+fs.readdir(filesystem_root + "display/", (err, files) => {
 	files.forEach(file => {
 	  //console.log(file);
 	  files_list.push(file);
@@ -16,8 +17,9 @@ fs.readdir("Immages/scraped/", (err, files) => {
 });
 
 app.get("/", function (req, res) {
-
-	res.sendFile("Immages/scraped/" + files_list[Math.floor(Math.random()*files_list.length)], { root : __dirname/});
+	var file = files_list[Math.floor(Math.random()*files_list.length)];
+	console.log(file);
+	res.sendFile("display/" + file, { root : filesystem_root});
 });
 
 let port = process.env.PORT || 8081;
