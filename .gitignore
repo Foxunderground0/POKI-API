@@ -3,3 +3,5 @@ to_sort/
 sorted/
 *.mp4
 *.mkv
+node_modules
+package-lock.json

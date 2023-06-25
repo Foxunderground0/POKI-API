@@ -68,7 +68,8 @@ def scrape_images_from_profile(profile_url, num_scrolls):
         time.sleep(wait_time)
 
 
-profile_url = "https://twitter.com/PokiBruh"  # "https://twitter.com/pokimanelol"
+# "https://twitter.com/pokimanelol"
+profile_url = "https://twitter.com/pokimanelol"
 num_scrolls = 100  # Number of times to scroll the feed
 
 scrape_images_from_profile(profile_url, num_scrolls)
