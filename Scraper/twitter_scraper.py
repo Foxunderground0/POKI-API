@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import requests
 import urllib.request
 import time
-
+from datetime import datetime
 # Set the Chrome options
 chrome_options = Options()
 chrome_options.add_argument("--disable-notifications")  # Disable notifications
@@ -59,8 +59,9 @@ def scrape_images_from_profile(profile_url, num_scrolls):
                 headers = requests.head(image_url).headers
                 if int(headers.get('content-length', 0)) > 600:
                     # Download the image using urllib.request
+                    timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
                     urllib.request.urlretrieve(
-                        image_url, f"scraped\\image_{idx}_{image_idx}.jpg")
+                        image_url, f"Immages\\scraped\\image_{idx}_{image_idx}_{timestamp}.jpg")
 
         # Scroll down to load more tweets
         driver.execute_script(
@@ -69,7 +70,7 @@ def scrape_images_from_profile(profile_url, num_scrolls):
 
 
 # "https://twitter.com/pokimanelol"
-profile_url = "https://twitter.com/pokimanelol"
+profile_url = "https://twitter.com/pokibruh"
 num_scrolls = 100  # Number of times to scroll the feed
 
 scrape_images_from_profile(profile_url, num_scrolls)

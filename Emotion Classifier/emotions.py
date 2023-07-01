@@ -79,7 +79,7 @@ for file in filesArray:
     except:
         break
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = face_recognition.face_locations(frame, model="cnn")
+    faces = face_recognition.face_locations(frame, 1, model="cnn")
     print(faces)
     for (y1, x1, y2, x2) in faces:
         cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
