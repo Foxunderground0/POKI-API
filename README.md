@@ -2,6 +2,8 @@
 
 This project is a tribute to Pokimane, a popular content creator on Twitter. The goal of this project is to scrape images from Pokimane's Twitter account, classify the emotions in those images, and serve them through a Node.js server.
 
+![Display](/Immages/PokiAPI.gif)
+
 ## Repository Structure
 
 The repository has the following structure:
